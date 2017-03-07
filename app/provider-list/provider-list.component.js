@@ -8,11 +8,17 @@ angular.
     controller: ['$http',
       function ProviderListController($http) {
         var self = this;
+        self.providers = [];
         self.orderProp = 'specialty';
         self.orderDirection = 'Descending';
         $http.get('providers/existingProviders.json').then(function(response) {
           self.providers = response.data;
         });
+
+        self.addProvider = function(provider) {
+          self.providers.push(provider)
+        };
+
       }
     ]
   });

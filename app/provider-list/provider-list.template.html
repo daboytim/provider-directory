@@ -1,44 +1,56 @@
-<div id="provider-list">
-  <h4 id="provider-list-title">Provider List</h4>
-  <div id="listManipulation">
-    <div id="search">
-      Search:
-      <input ng-model="$ctrl.query">
-    </div>
-    <div id="order">
-      Sort by:
-      <select ng-model="$ctrl.orderProp">
-        <option value="first_name">First Name</option>
-        <option value="last_name">Last Name</option>
-        <option value="email_address">Email Address</option>
-        <option value="specialty">Specialty</option>
-        <option value="practice_name">Practice Name</option>
-      </select>
-    </div>
-    <div id="direction">
-      <label ng-repeat="orderDirection in ['Ascending', 'Descending']" for="{{orderDirection}}">
-        <input type="radio"
-               ng-model="$ctrl.orderDirection"
-               ng-value="orderDirection"
-               id="{{orderDirection}}"
-               name="orderDirection"/>
-        {{orderDirection}}<br>
-      </label>
-    </div>
+<div>
+  <div id="create-provider">
+    <form novalidate class="simple-form">
+      <label>Last Name<br><input type="text" ng-model="provider.last_name" /></label><br />
+      <label>First Name<br><input type="text" ng-model="provider.first_name" /></label><br />
+      <label>Email Address<br><input type="text" ng-model="provider.email_address" /></label><br />
+      <label>Specialty<br><input type="text" ng-model="provider.specialty" /></label><br />
+      <label>Practice Name<br><input type="text" ng-model="provider.practice_name" /></label><br />
+      <button id="add-button" ng-click="$ctrl.addProvider(provider)">Add</button>
+    </form>
   </div>
-  <table>
-    <tr ng-repeat="provider in $ctrl.providers | filter:$ctrl.query | orderBy:$ctrl.orderProp:($ctrl.orderDirection === 'Ascending')">
-      <td valign="top">
-        <input type="checkbox" id="provider_{{$index}}">
-      </td>
-      <td>
-        <div id="providerName">{{provider.last_name}}, {{provider.first_name}}</div>
-        <div>{{provider.email_address}}</div>
-      </td>
-      <td align="right">
-        <div>{{provider.specialty}}</div>
-        <div>{{provider.practice_name}}</div>
-      </td>
-    </tr>
-  </table>
+  <div id="provider-list">
+    <h4 id="provider-list-title">Provider List</h4>
+    <div id="listManipulation">
+      <div id="search">
+        Search:
+        <input ng-model="$ctrl.query">
+      </div>
+      <div id="order">
+        Sort by:
+        <select ng-model="$ctrl.orderProp">
+          <option value="first_name">First Name</option>
+          <option value="last_name">Last Name</option>
+          <option value="email_address">Email Address</option>
+          <option value="specialty">Specialty</option>
+          <option value="practice_name">Practice Name</option>
+        </select>
+      </div>
+      <div id="direction">
+        <label ng-repeat="orderDirection in ['Ascending', 'Descending']" for="{{orderDirection}}">
+          <input type="radio"
+                 ng-model="$ctrl.orderDirection"
+                 ng-value="orderDirection"
+                 id="{{orderDirection}}"
+                 name="orderDirection"/>
+          {{orderDirection}}<br>
+        </label>
+      </div>
+    </div>
+    <table>
+      <tr ng-repeat="provider in $ctrl.providers | filter:$ctrl.query | orderBy:$ctrl.orderProp:($ctrl.orderDirection === 'Ascending')">
+        <td valign="top">
+          <input type="checkbox">
+        </td>
+        <td>
+          <div id="providerName">{{provider.last_name}}, {{provider.first_name}}</div>
+          <div>{{provider.email_address}}</div>
+        </td>
+        <td align="right">
+          <div>{{provider.specialty}}</div>
+          <div>{{provider.practice_name}}</div>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>

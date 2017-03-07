@@ -22,7 +22,7 @@ describe('providerList', function() {
     }));
 
     it('should create a `providers` model with 6 providers fetched from $http', function() {
-      expect(ctrl.providers).toBeUndefined();
+      expect(ctrl.providers).toEqual([]);
 
       $httpBackend.flush();
       expect(ctrl.providers.length).toBe(6);
@@ -34,6 +34,21 @@ describe('providerList', function() {
 
     it('should set a default value for the orderDirection model', function() {
       expect(ctrl.orderDirection).toBe('Descending');
+    });
+
+    it('should add a provider to the list', function() {
+      expect(ctrl.providers).toEqual([]);
+      var provider = {
+        "last_name": "Boytim",
+        "first_name": "Derek",
+        "email_address": "boytim.2@gmail.com",
+        "specialty": "Orthopedics",
+        "practice_name": "Derek's Joints"
+      };
+      ctrl.addProvider(provider);
+      expect(ctrl.providers).toEqual([
+        provider
+      ]);
     });
   });
 });
