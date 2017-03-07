@@ -7,10 +7,10 @@ describe('providerList', function() {
   // Test the controller
   describe('ProviderListController', function() {
 
-    it('should create a `providers` model with 3 providers', inject(function($componentController) {
+    it('should create a `providers` model with 6 providers', inject(function($componentController) {
       var ctrl = $componentController('providerList');
 
-      expect(ctrl.providers.length).toBe(3);
+      expect(ctrl.providers.length).toBe(6);
     }));
   });
 });

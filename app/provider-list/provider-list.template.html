@@ -1,4 +1,8 @@
 <div id="provider-list">
+  <h4 id="provider-list-title">Provider List</h4>
+  <div>
+    Search: <input ng-model="$ctrl.query">
+  </div>
   <table>
     <tr ng-repeat="provider in $ctrl.providers | filter:$ctrl.query">
       <td valign="top">
