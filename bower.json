@@ -1,0 +1,15 @@
+{
+  "name": "provider-directory",
+  "authors": [
+    "Derek Boytim <boytim.2@gmail.com>"
+  ],
+  "description": "A directory to help health care providers connect with other health care providers.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "bootstrap": "3.3.x"
+  }
+}

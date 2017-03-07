@@ -1,0 +1,17 @@
+<div id="provider-list">
+  <table>
+    <tr ng-repeat="provider in $ctrl.providers | filter:$ctrl.query">
+      <td valign="top">
+        <input type="checkbox" id="provider_{{$index}}">
+      </td>
+      <td>
+        <div id="providerName">{{provider.last_name}},{{provider.first_name}}</div>
+        <div>{{provider.email_address}}</div>
+      </td>
+      <td align="right">
+        <div>{{provider.specialty}}</div>
+        <div>{{provider.practice_name}}</div>
+      </td>
+    </tr>
+  </table>
+</div>

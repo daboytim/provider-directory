@@ -1,0 +1,26 @@
+body {
+  padding-top: 20px;
+}
+
+div#provider-list {
+    height: 300px;
+    width: 500px;
+    overflow: auto;
+}
+
+table, th, td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+tr:nth-child(even) {
+  background: #CCC;
+}
+tr:nth-child(odd) {
+  background: #FFF
+}
+
+div#providerName {
+  font-size: large;
+  font-weight: bold;
+}
