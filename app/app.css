@@ -3,9 +3,35 @@ body {
 }
 
 div#provider-list {
-    height: 300px;
-    width: 500px;
     overflow: auto;
+}
+
+#listManipulation {
+  height: 100%;
+  width:100%;
+}
+
+#search, #order, #direction {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+  font-size: 12px;
+}
+
+#search {
+  width: 33%;
+  align; left;
+}
+
+#order {
+  width: 34%;
+  align: right;
+}
+
+#direction {
+  width: 33%;
+  align: left;
 }
 
 table, th, td {

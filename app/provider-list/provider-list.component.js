@@ -14,5 +14,7 @@ angular.
           {last_name: "Witting", first_name: "Mike", email_address: "mwitting@updox.com", specialty: "Pediatrics", practice_name: "Witting’s Well Kids Pediatrics"},
           {last_name: "Juday", first_name: "Tobin", email_address: "tjuday@updox.com", specialty: "General Medicine", practice_name: "Juday Family Practice"}
       ];
+      this.orderProp = 'specialty';
+      this.orderDirection = 'Descending';
     }
   });
