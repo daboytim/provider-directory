@@ -15,8 +15,11 @@ angular.
           self.providers = response.data;
         });
 
-        self.addProvider = function(provider) {
-          self.providers.push(provider)
+        self.addProvider = function(provider, form) {
+          if (form.$valid) {
+            self.providers.push(angular.copy(provider));
+            form.$valid = false;
+          }
         };
 
       }

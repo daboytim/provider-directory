@@ -1,17 +1,46 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
-  padding-top: 20px;
+  padding: 10px 10px 10px 10px;
 }
 
-div#provider-list {
-    overflow: auto;
+#providerDirectory {
+  padding: 10px 10px 10px 10px;
+  height: 420px;
+  width: 800px;
+  background: #CCC;
 }
 
-#listManipulation {
-  height: 100%;
-  width:100%;
+#providerDirectoryTitle {
+  font-weight: bold;
 }
 
-#search, #order, #direction {
+#createProvider, #providerList {
+  padding: 10px 10px 10px 10px;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: top;
+  font-size: 12px;
+  background: #FFF;
+  height: 310px;
+}
+
+#createProvider {
+
+}
+
+#providerList {
+  width: 600px;
+}
+
+#tableControls {
+}
+
+#search, #sortContainer {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -20,21 +49,44 @@ div#provider-list {
 }
 
 #search {
-  width: 33%;
-  align; left;
+  float; left;
 }
 
-#order {
-  width: 34%;
-  align: right;
+#sortContainer {
+  float: right;
 }
 
-#direction {
-  width: 33%;
-  align: left;
+#tableContainer {
+  padding-bottom: 10px;
+  clear: left;
+  clear: right;
+  height: 170px;
+  width: 600;
+  overflow: auto;
+  margin-bottom: 10px;
 }
 
-table, th, td {
+table {
+  width: 100%;
+}
+
+.col1 {
+  width: 6%;
+  vertical-align: top;
+  text-align: center;
+}
+
+.col2 {
+  width: 40%
+  text-align: left;
+}
+
+.col3 {
+  padding-right: 10px;
+  text-align: right;
+}
+
+tr {
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -43,10 +95,14 @@ tr:nth-child(even) {
   background: #CCC;
 }
 tr:nth-child(odd) {
-  background: #FFF
+  background: #FFF;
 }
 
-div#providerName {
-  font-size: large;
+#providerName {
+  font-size: 16px;
   font-weight: bold;
+}
+
+#removeButton {
+  float: right;
 }
