@@ -66,7 +66,7 @@ describe('ProviderList Application', function() {
       var emailAddress = element(by.model('provider.email_address'));
       var specialty = element(by.model('provider.specialty'));
       var practiceName = element(by.model('provider.practice_name'));
-      var addButton = element(by.css('button[id="add-button"]'));
+      var addButton = element(by.css('button[id="addButton"]'));
       var providerList = element.all(by.repeater('provider in $ctrl.providers'));
 
       expect(providerList.count()).toBe(6);
@@ -80,6 +80,19 @@ describe('ProviderList Application', function() {
       addButton.click();
 
       expect(providerList.count()).toBe(7);
+    });
+
+    it('should be possible to remove a provider from the model and update the view', function() {
+      var aCheckbox = element(by.css('input[type="checkbox"]'));
+      var removeButton = element(by.css('button[id="removeButton"]'));
+      var providerList = element.all(by.repeater('provider in $ctrl.providers'));
+
+      expect(providerList.count()).toBe(6);
+
+      aCheckbox.click();
+      removeButton.click();
+
+      expect(providerList.count()).toBe(5);
     });
 
   });

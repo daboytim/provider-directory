@@ -9,7 +9,7 @@
       <label>Email Address<br><input type="email" ng-model="provider.email_address" required/></label><br />
       <label>Specialty<br><input type="text" ng-model="provider.specialty" /></label><br />
       <label>Practice Name<br><input type="text" ng-model="provider.practice_name" /></label><br />
-      <button id="addButton" ng-click="$ctrl.addProvider(provider, addForm)">Add</button>
+      <button id="addButton" ng-click="addForm.$valid && $ctrl.addProvider(provider); addForm.$valid = false;">Add</button>
     </form>
   </div>
   <div id="providerList">
@@ -46,7 +46,7 @@
       <table id="providerTable">
         <tr ng-repeat="provider in $ctrl.providers | filter:$ctrl.query | orderBy:$ctrl.orderProp:($ctrl.orderDirection === 'Ascending')">
           <td class="col1">
-            <input type="checkbox">
+            <input type="checkbox" ng-model="provider.checked">
           </td>
           <td class="col2">
             <div id="providerName">{{provider.last_name}}, {{provider.first_name}}</div>
@@ -59,6 +59,6 @@
         </tr>
       </table>
     </div>
-    <button id="removeButton" ng-click="$ctrl.removeProvider(provider)">Remove</button>
+    <button id="removeButton" ng-click="$ctrl.removeCheckedProviders()">Remove</button>
   </div>
 </div>

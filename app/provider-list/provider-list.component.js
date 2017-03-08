@@ -9,16 +9,23 @@ angular.
       function ProviderListController($http) {
         var self = this;
         self.providers = [];
+        self.checkedProviders = [];
         self.orderProp = 'specialty';
         self.orderDirection = 'Descending';
         $http.get('providers/existingProviders.json').then(function(response) {
           self.providers = response.data;
         });
 
-        self.addProvider = function(provider, form) {
-          if (form.$valid) {
-            self.providers.push(angular.copy(provider));
-            form.$valid = false;
+        self.addProvider = function(provider) {
+          self.providers.push(angular.copy(provider));
+        };
+
+        self.removeCheckedProviders = function() {
+          for (var i=0; i<self.providers.length; i++) {
+            var provider = self.providers[i];
+            if (provider.hasOwnProperty('checked') && provider.checked) {
+              self.providers.splice(i, 1);
+            }
           }
         };
 
