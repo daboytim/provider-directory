@@ -127,6 +127,15 @@ describe('ProviderList Application', function() {
       expect(tableData.get(0).getText()).toBe('No Providers in the Directory');
     });
 
+    it('should be possible to remove all providers from the model with a single step', function() {
+      var removeAllButton = element(by.css('button[id="removeAllButton"]'));
+      var providerList = element.all(by.repeater('provider in $ctrl.providers'));
+
+      expect(providerList.count()).toBe(6);
+      removeAllButton.click();
+      expect(providerList.count()).toBe(0);
+    });
+
   });
 
 });

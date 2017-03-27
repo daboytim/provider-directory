@@ -108,6 +108,10 @@ tr:nth-child(odd) {
   font-weight: bold;
 }
 
+#removeAllButton {
+  float: left;
+}
+
 #removeButton {
   float: right;
 }
