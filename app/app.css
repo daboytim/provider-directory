@@ -86,6 +86,11 @@ table {
   text-align: right;
 }
 
+.message {
+  font-size: 14px;
+  font-style: italic;
+}
+
 tr {
   padding-left: 10px;
   padding-right: 10px;

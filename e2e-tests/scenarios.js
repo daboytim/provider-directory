@@ -110,6 +110,23 @@ describe('ProviderList Application', function() {
       expect(providerList.count()).toBe(3);
     });
 
+    it('should display message when the provider list is empty', function() {
+      var checkboxes = element.all(by.css('input[type="checkbox"]'));
+      var removeButton = element(by.css('button[id="removeButton"]'));
+      var providerList = element.all(by.repeater('provider in $ctrl.providers'));
+
+      checkboxes.each(function(element) {
+        element.click();
+      });
+      removeButton.click();
+      expect(providerList.count()).toBe(0);
+
+      var tableData = element.all(by.css('td'));
+
+      expect(tableData.count()).toBe(1);
+      expect(tableData.get(0).getText()).toBe('No Providers in the Directory');
+    });
+
   });
 
 });

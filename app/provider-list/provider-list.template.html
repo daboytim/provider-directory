@@ -57,6 +57,11 @@
             <div>{{provider.practice_name}}</div>
           </td>
         </tr>
+        <tr ng-show="!$ctrl.providers.length">
+          <td class="message">
+            No Providers in the Directory
+          </td>
+        </tr>
       </table>
     </div>
     <button id="removeButton" ng-click="$ctrl.removeCheckedProviders()">Remove</button>
