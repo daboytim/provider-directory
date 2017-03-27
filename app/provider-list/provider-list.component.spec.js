@@ -68,5 +68,22 @@ describe('providerList', function() {
       expect(ctrl.providers).toEqual([]);
     });
 
+    it('should remove multiple providers from the model', function() {
+      var provider = {
+        "last_name": "Boytim",
+        "first_name": "Derek",
+        "email_address": "boytim.2@gmail.com",
+        "specialty": "Orthopedics",
+        "practice_name": "Derek's Joints",
+        "checked": true
+      };
+      ctrl.providers = [
+        provider,provider,provider
+      ];
+
+      ctrl.removeCheckedProviders();
+      expect(ctrl.providers).toEqual([]);
+    });
+
   });
 });

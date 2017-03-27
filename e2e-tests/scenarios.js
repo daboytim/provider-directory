@@ -95,6 +95,21 @@ describe('ProviderList Application', function() {
       expect(providerList.count()).toBe(5);
     });
 
+    it('should be possible to remove multiple providers from the model and update the view', function() {
+      var checkboxes = element.all(by.css('input[type="checkbox"]'));
+      var removeButton = element(by.css('button[id="removeButton"]'));
+      var providerList = element.all(by.repeater('provider in $ctrl.providers'));
+
+      expect(providerList.count()).toBe(6);
+
+      checkboxes.get(0).click();
+      checkboxes.get(2).click();
+      checkboxes.get(3).click();
+      removeButton.click();
+
+      expect(providerList.count()).toBe(3);
+    });
+
   });
 
 });

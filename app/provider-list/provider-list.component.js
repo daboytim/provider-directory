@@ -25,6 +25,7 @@ angular.
             var provider = self.providers[i];
             if (provider.hasOwnProperty('checked') && provider.checked) {
               self.providers.splice(i, 1);
+              i--; //since we are removing an element from the array we don't want the index to increase for the next iteration
             }
           }
         };
